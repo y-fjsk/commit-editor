@@ -1,1 +1,22 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <title>commit-editor.json ダウンロード</title>
+  </head>
+  <body>
+    <p>JSONファイルをダウンロードします。少々お待ちください…</p>
+    <script>
+      window.onload = function () {
+        const fileUrl = "https://commit-editor.vercel.app/commit-editor.json";
 
+        const link = document.createElement("a");
+        link.href = fileUrl;
+
+        link.download = "commit-editor.json";
+
+        link.click();
+      };
+    </script>
+  </body>
+</html>
