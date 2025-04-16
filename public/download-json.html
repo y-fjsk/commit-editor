@@ -3,6 +3,43 @@
   <head>
     <meta charset="UTF-8">
     <title>commit-editor.json ダウンロード</title>
+      <style>
+    /*--- デフォルト ---*/
+    body {
+      font-family: sans-serif; 
+      margin: 40px;
+      background-color: #fff;
+      color: #333;
+    }
+    #status {
+      font-size: 1.2rem;        
+      font-weight: bold;        
+      color: #333;              
+    }
+    .success {
+      color: green; 
+    }
+    .error {
+      color: red;    
+    }
+
+    /*--- ダークモード ---*/
+    @media (prefers-color-scheme: dark) {
+      body {
+        background-color: #222
+        color: #ddd;
+      }
+      #status {
+        color: #ddd;
+      }
+      .success {
+        color: #8f8;
+      }
+      .error {
+        color: #f88;
+      }
+    }
+  </style>
   </head>
   <body>
     <p id="status">ダウンロードを開始します...</p>
