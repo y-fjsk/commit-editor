@@ -16,12 +16,11 @@
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       line-height: 1.5;
-      background-color: #f5f5f5;  /* ライト背景 */
+      background-color: #f5f5f5;
       color: #333;
       transition: background-color 0.3s, color 0.3s;
     }
 
-    /* 画面中央にカードを配置 */
     .container {
       max-width: 600px;
       margin: 5% auto;
@@ -31,22 +30,19 @@
       padding: 24px;
     }
 
-    /* 見出し */
     h1 {
-      margin-bottom: 16px;
-      font-size: 1.5rem;
+      margin-bottom: 20px;
+      font-size: 20px;
       text-align: center;
     }
 
-    /* ステータスメッセージ */
     #status {
-      margin-top: 16px;
-      font-size: 1.1rem;
+      margin-top: 20px;
+      font-size: 20px;
       font-weight: bold;
       text-align: center;
     }
 
-    /* ボタン風スタイル（今回は自動クリックなのでユーザーが目視できるだけ） */
     .download-btn {
       display: inline-block;
       background-color: #0070f3;
@@ -64,7 +60,6 @@
       background-color: #0059b2;
     }
 
-    /* 成功/エラー時の文字色を変化 */
     .success {
       color: green;
     }
@@ -73,12 +68,12 @@
     }
 
     /* ------------------------------
-       ダークモード (prefers-color-scheme: dark) 
+       ダークモード
     ------------------------------ */
     @media (prefers-color-scheme: dark) {
       body {
-        background-color: #222;  /* ダーク背景 */
-        color: #ddd;            /* 文字色を明るめに */
+        background-color: #222;
+        color: #ddd;
       }
       .container {
         background-color: #333;
@@ -91,10 +86,10 @@
         background-color: #1c5980;
       }
       .success {
-        color: #7fff7f; /* 緑を明るめに */
+        color: #7fff7f;
       }
       .error {
-        color: #f88;    /* 赤を明るめに */
+        color: #f88;
       }
     }
   </style>
