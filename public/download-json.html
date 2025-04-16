@@ -1,22 +1,39 @@
 <!DOCTYPE html>
 <html lang="ja">
   <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8">
     <title>commit-editor.json ダウンロード</title>
   </head>
   <body>
-    <p>JSONファイルをダウンロードします。少々お待ちください…</p>
+    <p id="status">ダウンロードを開始します...</p>
+
     <script>
-      window.onload = function () {
-        const fileUrl = "https://commit-editor.vercel.app/commit-editor.json";
+      const fileUrl = "https://commit-editor.vercel.app/commit-editor.json";
 
-        const link = document.createElement("a");
-        link.href = fileUrl;
+      const statusElement = document.getElementById("status");
 
-        link.download = "commit-editor.json";
+      fetch(fileUrl)
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error(`ファイルの取得に失敗しました (HTTP ${response.status})`);
+          }
+          return response.blob();
+        })
+        .then((blob) => {
+          const blobUrl = URL.createObjectURL(blob);
 
-        link.click();
-      };
+          const link = document.createElement("a");
+          link.href = blobUrl;
+          link.download = "commit-editor.json";
+          link.click();
+
+          statusElement.textContent = "ダウンロードが完了しました。";
+
+          URL.revokeObjectURL(blobUrl);
+        })
+        .catch((error) => {
+          statusElement.textContent = `ダウンロードに失敗しました: ${error.message}`;
+        });
     </script>
   </body>
 </html>
