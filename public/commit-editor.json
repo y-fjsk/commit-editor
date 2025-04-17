@@ -133,6 +133,7 @@
       "name": "footer",
       "type": "text",
       "multiline": true,
+      "lines": 1,
       "placeholder": "JIRA-1234 など",
       "description": "関連チケット ID や備考（任意）"
     }
